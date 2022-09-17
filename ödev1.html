@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@1,200&display=swap');
+        *{
+            background-color: #393E46;
+            color:orange;
+            font-family: 'Roboto Mono', monospace;
+        }
+        .container{
+            margin-top:50px;
+            text-align: center;
+            font-size: larger;
+        }
+        h1{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <b><h1>KODLUYORUZ</h1></b>
+        Merhaba, <b><span id="name"></span></b>! Hoşgeldin!
+        <p><span id="clock"></span> <span id="days"></span></p>
+        tarihinde <b>Kodluyoruz Frontend Web Development Patikası</b>'nın Javascript
+        <p>bölümü 1. Ödevindesiniz.</p>
+    </div>
+    <script>
+                // Name
+        var isim=document.querySelector("#name");
+        isim.innerHTML=prompt("Adınızı giriniz.");
+
+                // Hour
+        var saat=document.querySelector("#clock");
+        
+        function time(){
+            var date= new Date().toLocaleTimeString(); 
+           saat.innerHTML=date;
+        }
+        time();
+        setInterval(time,1000);
+
+                // Day
+        var days=document.querySelector("#days");
+
+        var tarih=new Date().getDay();
+
+        if(tarih==0){
+          days.innerHTML="Pazar";
+        }else if(tarih==1){
+            days.innerHTML="Pazartesi";
+        }else if(tarih==2){
+            days.innerHTML="Salı";
+        }else if(tarih==3){
+            days.innerHTML="Çarşamba";
+        }else if(tarih==4){
+            days.innerHTML="Perşembe";
+        }else if(tarih==5){
+            days.innerHTML="Cuma";
+        }else if(tarih==6){
+            days.innerHTML="Cumartesi";
+        }
+        
+        
+    </script>
+</body>
+</html>
